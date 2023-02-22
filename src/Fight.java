@@ -18,13 +18,8 @@ public class Fight{
         Random random = new Random();
         while (fighters.size() != 1){
             for(int i = 0; i < fighters.size(); i++){
-                
                 int randomTarget = random.nextInt(fighters.size());
-                
-                if (fighters.get(randomTarget).getHealthValue() <= 0){
-                    System.out.println(fighters.get(i).getName() + " ha sido eliminado");
-                    fighters.remove(fighters.get(i));
-                }
+
                 if (fighters.size() == 1){
                     break;
                 }
@@ -32,7 +27,12 @@ public class Fight{
                     continue;
                 } else {
                     fighters.get(i).attack(fighters.get(randomTarget));
-                }   
+                }
+
+                if (fighters.get(randomTarget).getHealthValue() <= 0){
+                    System.out.println(fighters.get(randomTarget).getName() + " ha sido eliminado");
+                    fighters.remove(fighters.get(randomTarget));
+                }
             }
         }
         System.out.println(fighters.get(0).getName() + " ha ganado");
