@@ -11,7 +11,6 @@ public class Fight{
         fighters.add(meganMan);
         fighters.add(dituu);
         fighters.add(korby);
-        System.out.println(fighters.size());
     }
 
     public void fight(){
@@ -23,6 +22,7 @@ public class Fight{
                 if (fighters.size() == 1){
                     break;
                 }
+
                 if (i == randomTarget){
                     continue;
                 } else {
@@ -30,12 +30,12 @@ public class Fight{
                 }
 
                 if (fighters.get(randomTarget).getHealthValue() <= 0){
-                    System.out.println(fighters.get(randomTarget).getName() + " ha sido eliminado");
+                    System.out.println( "- " + fighters.get(randomTarget).getName() + " ha sido eliminado :( -");
                     fighters.remove(fighters.get(randomTarget));
                 }
             }
         }
-        System.out.println(fighters.get(0).getName() + " ha ganado");
+        System.out.println( "--- " + fighters.get(0).getName() + " gana! ---");
     }
 
     public static void main(String[] args) {

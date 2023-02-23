@@ -5,6 +5,6 @@ public class Korby extends Character{
         setAttackValue(10);
         setDefenseValue(0.75);
         setHealthValue(150);
-        powers = new KorbyPowers();
+        skillType = new defaultSkill();
     }
 }

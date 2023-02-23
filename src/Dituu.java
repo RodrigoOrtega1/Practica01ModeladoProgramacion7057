@@ -5,6 +5,6 @@ public class Dituu extends Character {
         setAttackValue(15);
         setDefenseValue(0.75);
         setHealthValue(120);
-        powers = new DituuPowers();
+        skillType = new defaultSkill();
     }
 }

@@ -5,6 +5,6 @@ public class MeganMan extends Character {
         setAttackValue(25);
         setDefenseValue(0.5);
         setHealthValue(100);
-        powers = new MeganManPowers();
+        skillType = new MeganManSkills();
     }
 }
