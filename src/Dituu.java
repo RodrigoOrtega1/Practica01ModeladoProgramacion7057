@@ -1,9 +1,22 @@
+/**
+ * Clase que representa al personaje Dituu del juego
+ * @version 1.0 24-02-2023
+ * @since Modelado y Programación 7075
+ */
 import java.util.Random;
 
 public class Dituu extends Character {
     
+
+    /**
+     * Habilidad que esta usando actualmente el personaje
+     */
     DituuSkills actualSkill = new NormalDituuSkill();
 
+
+    /**
+     * Constructor de Dituu
+     */
     public Dituu(){
         super();
         setName("Dituu");
@@ -40,6 +53,7 @@ public class Dituu extends Character {
         }
     }
 
+    @Override
     public String attack(Character target){
         if(Math.random() < 0.15){
             target.setHealthValue(target.getHealthValue() - (this.getAttackValue() / target.getDefenseValue()));

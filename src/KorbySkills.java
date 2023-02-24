@@ -1,5 +1,15 @@
 public interface KorbySkills {
+    /**
+     * Devuelve el ataque de Dituu
+     * @param target objetivo de dituu
+     * @return ataque de dituu
+     */
     String skill(Character target);
+
+    /**
+     * Método que devuelve el nombre de la habilidad
+     * @return el nombre de la habilidad
+     */
     String getName();
 }
 
@@ -10,10 +20,7 @@ class NormalKorbySkill implements KorbySkills{
         return "Korby ha atacado a " + target.getName();
     }
     
-    /**
-     * Método que devuelve el nombre de la habilidad "Ataque Normal"
-     * @return skillName el nombre de la habilidad
-     */
+    @Override
     public String getName(){
         return skillName;
     }
@@ -27,10 +34,7 @@ class UltraSwordSkill implements KorbySkills{
         return "Korby ha atacado a " + target.getName() + " con su " + skillName;
     }
     
-    /**
-     * Método que devuelve el nombre de la habilidad "Hyper Sword"
-     * @return skillName el nombre de la habilidad
-     */
+    @Override
     public String getName(){
         return skillName;
     }
@@ -45,10 +49,7 @@ class KorbySkill2 implements KorbySkills{
         return "Korby ha atacado a " + target.getName() + " con su " + skillName;
     }
     
-    /**
-     * Método que devuelve el nombre de la habilidad "Mecha"
-     * @return skillName el nombre de la habilidad
-     */
+    @Override
     public String getName(){
         return skillName;
     }
@@ -64,10 +65,7 @@ class KorbySkill3 implements KorbySkills{
         return "Korby ha atacado a " + target.getName() + " con su " + skillName;
     }
     
-    /**
-     * Método que devuelve el nombre de la habilidad "Mazo"
-     * @return skillName el nombre de la habilidad
-     */
+    @Override
     public String getName(){
         return skillName;
     }

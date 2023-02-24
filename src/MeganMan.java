@@ -1,9 +1,21 @@
+/**
+ * Clase que representa al personaje MeganMan del juego
+ * @version 1.0 24-02-2023
+ * @since Modelado y Programación 7075
+ */
 import java.util.Random;
 
 public class MeganMan extends Character {
     
+    /**
+     * Habilidad que esta usando actualmente el personaje
+     */
     MeganManSkills actualSkill = new NormalMeganManSkill();
 
+
+    /**
+     * Constructor de MeganMan
+     */
     public MeganMan(){
         super();
         setName("MeganMan");

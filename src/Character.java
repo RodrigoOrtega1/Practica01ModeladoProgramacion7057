@@ -1,3 +1,8 @@
+/**
+ * Clase que representa a un personaje del juego
+ * @version 1.0 24-02-2023
+ * @since Modelado y Programación 7075
+ */
 public class Character{
     
     /**
@@ -84,6 +89,12 @@ public class Character{
         return name;
     }
     
+
+    /**
+     * Metodo que realiza la accion de atacar a otro personaje
+     * @param target personaje a atacar
+     * @return la acción del personaje que ataca
+     */
     public String attack(Character target){
         return "";
     }

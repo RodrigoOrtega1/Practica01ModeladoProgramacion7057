@@ -1,15 +1,22 @@
 public interface MeganManSkills {
+    /**
+     * Devuelve el ataque de Dituu
+     * @param target objetivo de dituu
+     * @return ataque de dituu
+     */
     String skill(Character target);
+
+    /**
+     * Método que devuelve el nombre de la habilidad
+     * @return el nombre de la habilidad
+     */
     String getName();
 }
 
 class NormalMeganManSkill implements MeganManSkills{
     String skillName = "Ataque Normal";
     
-    /**
-     * Método que devuelve el nombre de la habilidad "Ataque Normal"
-     * @return skillName el nombre de la habilidad
-     */
+    @Override
     public String getName(){
         return skillName;
     }
@@ -29,10 +36,7 @@ class MeganManSkill1 implements MeganManSkills{
         return "MeganMan ha atacado a " + target.getName() + " con su " + skillName;
     }
     
-    /**
-     * Método que devuelve el nombre de la habilidad "Lanza-cohetes"
-     * @return skillName el nombre de la habilidad
-     */
+    @Override
     public String getName(){
         return skillName;
     }
@@ -47,10 +51,7 @@ class MeganManSkill2 implements MeganManSkills{
         return "MeganMan ha atacado a " + target.getName() + " con su " + skillName;
     }
     
-    /**
-     * Método que devuelve el nombre de la habilidad "Megan Buster"
-     * @return skillName el nombre de la habilidad
-     */
+    @Override
     public String getName(){
         return skillName;
     }
@@ -66,10 +67,7 @@ class MeganManSkill3 implements MeganManSkills{
         return "MeganMan ha atacado a " + target.getName() + " con su " + skillName;
     }
     
-    /**
-     * Método que devuelve el nombre de la habilidad "Megan Arm"
-     * @return skillName el nombre de la habilidad
-     */
+    @Override
     public String getName(){
         return skillName;
     }

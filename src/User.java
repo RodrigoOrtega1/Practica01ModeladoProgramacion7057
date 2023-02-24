@@ -6,12 +6,33 @@ import java.util.ArrayList;
 
 public class User implements Observer{
 
+    /**
+     * El nombre del usuario
+     */
     String id;
+    /**
+     *Personaje por el que aposto
+     */
     Character betOn;
+    /**
+     *Evento que esta ocurriendo en la pelea observada
+     */
     String currentFightEvent;
+    /**
+     *Pelea que se esta observando
+     */
     Fight currentFight;
-    ArrayList<String> fight = new ArrayList<>();
+    /**
+     * Lista de eventos de la pelea observada
+     */
+    ArrayList<String> fightEventList = new ArrayList<>();
 
+    /**
+     * Constructor de un usuario
+     * @param id Nombre del usuario
+     * @param betFor Peleador por el que apostó el usuario
+     * @param currentFight Pelea que esta observando el usuario
+     */
     public User(String id, Character betFor, Fight currentFight){
         this.id = id;
         this.betOn = betFor;
@@ -19,24 +40,21 @@ public class User implements Observer{
         currentFight.register(this);
     }
     
-    public void setID(String newId){
-        id = newId;
-    }
-    
-    public void setBet(Character betOn){
-        this.betOn = betOn;
-    }
-
     @Override
     public void update() {
        currentFightEvent = currentFight.getFightEvent();
-       fight.add(currentFightEvent);
+       fightEventList.add(currentFightEvent);
        if(currentFight.getIsItOver() == true){
-            fight.add(verifyWin());
+            fightEventList.add(checkWin());
        }
     }
 
-    public String verifyWin(){
+
+    /**
+     * Checa si el personaje por el que usuario aposto gano
+     * @return Una String de acuerdo a si el personaje por el que aposto el usuario gano
+     */
+    public String checkWin(){
         if(betOn.getName() == currentFight.getWinner()){
             return id + " el personaje por el que apostaste (" + betOn.getName() + ") ha ganado!";
         } else {
@@ -44,12 +62,17 @@ public class User implements Observer{
         }
     }
 
+
+    /**
+     * Escribe los eventos de la pelea en una bitacora txt
+     * @throws IOException
+     */
     public void writeLog() throws IOException{
         File file = new File("./bitacora" + id + ".txt");
         FileWriter fileWriter = new FileWriter(file);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        for(int i = 0; i < fight.size(); i++){
-            bufferedWriter.write(fight.get(i).toString() + "\n");
+        for(int i = 0; i < fightEventList.size(); i++){
+            bufferedWriter.write(fightEventList.get(i).toString() + "\n");
         }
         bufferedWriter.flush();
         bufferedWriter.close();

@@ -4,6 +4,10 @@ public class Korby extends Character{
    
     KorbySkills actualSkill = new NormalKorbySkill();
 
+
+    /**
+     * Constructor de Korby
+     */
     public Korby(){
         super();
         setName("Korby");
@@ -40,6 +44,7 @@ public class Korby extends Character{
         }
     }
 
+    @Override
     public String attack(Character target){
         if(Math.random() < 0.15){
             target.setHealthValue(target.getHealthValue() - (this.getAttackValue() / target.getDefenseValue()));
