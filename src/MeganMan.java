@@ -46,7 +46,7 @@ public class MeganMan extends Character {
             return target.getName() + " se ha defendido del ataque de " + this.getName() + ", toma dano reducido";
         } else if (Math.random() < 0.25) {
             selectSkill();
-            return "!!!" + this.getName() + " ha tomado su habilidad: " + actualSkill.getName() + "!!!";
+            return "¡¡¡" + this.getName() + " ha tomado su habilidad: " + actualSkill.getName() + "!!!";
         } else {
             target.setHealthValue(target.getHealthValue() - this.getAttackValue());
             return actualSkill.skill(target);

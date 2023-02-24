@@ -27,6 +27,17 @@ public class User implements Observer{
     public void update() {
        currentFightEvent = currentFight.getFightEvent();
        fight.add(currentFightEvent);
+       if(currentFight.getIsItOver() == true){
+            fight.add(verifyWin());
+       }
+    }
+
+    public String verifyWin(){
+        if(betOn.getName() == currentFight.getWinner()){
+            return id + " el personaje por el que apostaste (" + betOn.getName() + ") ha ganado!";
+        } else {
+            return id + " el personaje por el que apostaste (" + betOn.getName() + ") ha perdido :(";
+        }
     }
 
     public void replayFight(){

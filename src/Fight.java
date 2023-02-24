@@ -5,6 +5,8 @@ public class Fight implements Subject{
     public ArrayList<Character> fighters = new ArrayList<>();
     public ArrayList<Observer> observersList = new ArrayList<>();
     String fightEvent;
+    String winner;
+    Boolean isOver = false;
 
     public void initialize(){
         Character korby = new Korby();
@@ -13,6 +15,22 @@ public class Fight implements Subject{
         fighters.add(meganMan);
         fighters.add(dituu);
         fighters.add(korby);
+    }
+
+    public boolean getIsItOver(){
+        return isOver;
+    }
+
+    public void setIsOver(Boolean isOver){
+        this.isOver = isOver;
+    }
+
+    public String getWinner(){
+        return winner;
+    }
+
+    public void setWinner(String winner){
+        this.winner = winner;
     }
 
     public void setFightEvent(String fightEvent){
@@ -48,6 +66,8 @@ public class Fight implements Subject{
             }
         }
         setFightEvent("--- " + fighters.get(0).getName() + " gana! ---");
+        setWinner(fighters.get(0).getName());
+        setIsOver(true);
         notifyObserver();
     }
 
