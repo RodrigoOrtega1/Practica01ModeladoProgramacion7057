@@ -32,16 +32,16 @@ public class MeganMan extends Character {
         }
     }
 
-    public void attack(Character target){
+    public String attack(Character target){
         if(Math.random() < 0.15){
             target.setHealthValue(target.getHealthValue() - (this.getAttackValue() / target.getDefenseValue()));
-            System.out.println(target.getName() + " se ha defendido del ataque de " + this.getName() + ", toma dano reducido");
+            return target.getName() + " se ha defendido del ataque de " + this.getName() + ", toma dano reducido";
         } else if (Math.random() < 0.25) {
             selectSkill();
-            System.out.print( "!!!" + this.getName() + " ha tomado su habilidad: " + actualSkill.getName() + "!!!\n");
+            return "!!!" + this.getName() + " ha tomado su habilidad: " + actualSkill.getName() + "!!!\n";
         } else {
             target.setHealthValue(target.getHealthValue() - this.getAttackValue());
-            System.out.println(actualSkill.skill(target));
+            return actualSkill.skill(target);
         }
     }
 }

@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Fight{
+public class Fight implements Subject{
     public ArrayList<Character> fighters = new ArrayList<>();
+    public ArrayList<Observer> observersList = new ArrayList<>();
+    String fightEvent;
 
     public void initialize(){
         Character korby = new Korby();
@@ -11,6 +13,10 @@ public class Fight{
         fighters.add(meganMan);
         fighters.add(dituu);
         fighters.add(korby);
+    }
+
+    public void setFightEvent(String fightEvent){
+        this.fightEvent = fightEvent;
     }
 
     public void fight(){
@@ -26,16 +32,33 @@ public class Fight{
                 if (i == randomTarget){
                     continue;
                 } else {
-                    fighters.get(i).attack(fighters.get(randomTarget));
+                    setFightEvent(fighters.get(i).attack(fighters.get(randomTarget)));
                 }
 
                 if (fighters.get(randomTarget).getHealthValue() <= 0){
-                    System.out.println( "- " + fighters.get(randomTarget).getName() + " ha sido eliminado :( -");
+                    setFightEvent("- " + fighters.get(randomTarget).getName() + " ha sido eliminado :( -");
                     fighters.remove(fighters.get(randomTarget));
                 }
             }
         }
-        System.out.println( "--- " + fighters.get(0).getName() + " gana! ---");
+        setFightEvent("--- " + fighters.get(0).getName() + " gana! ---");
+    }
+
+    @Override
+    public void register(Observer o) {
+        observersList.add(o);
+    }
+
+    @Override
+    public void unregister(Observer o) {
+        observersList.remove(o);
+    }
+
+    @Override
+    public void notifyObserver() {
+        for (Observer o : observersList){
+            o.update();
+        }   
     }
 
     public static void main(String[] args) {

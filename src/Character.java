@@ -60,14 +60,8 @@ public class Character{
         return name;
     }
 
-    public void attack(Character target){
-        double characterAttackValue = this.getAttackValue();
-        if(Math.random() < 0.25){
-            target.setHealthValue(target.healthValue - (characterAttackValue / target.defenseValue));
-            System.out.println(target.name + " se ha defendido del ataque de " + this.name + ", toma dano reducido");
-        } else {
-            target.setHealthValue(target.healthValue - characterAttackValue);
-        }
+    public String attack(Character target){
+        return "";
     }
 
 }
