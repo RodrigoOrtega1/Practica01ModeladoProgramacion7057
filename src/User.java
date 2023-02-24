@@ -44,12 +44,6 @@ public class User implements Observer{
         }
     }
 
-    public void replayFight(){
-        for (String fightEvents : fight){
-            System.out.println(fightEvents);
-        }
-    }
-
     public void writeLog() throws IOException{
         File file = new File("./bitacora" + id + ".txt");
         FileWriter fileWriter = new FileWriter(file);
