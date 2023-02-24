@@ -35,11 +35,19 @@ public class Character{
     public void setAttackValue(double newAttackValue){
         attackValue = newAttackValue;
     }
-
+    
+    /**
+     * Metodo setter para establecer la capacidad de defensa de un personaje
+     * @param newDefenseValue la capacidad de defensa del personaje
+     */
     public void setDefenseValue(double newDefenseValue){
         defenseValue = newDefenseValue;
     }
-
+    
+    /**
+     * Metodo setter para establecer la cantidad de vida de un personaje
+     * @param newHealthValue la cantidad de vida del personaje
+     */
     public void setHealthValue(double newHealthValue) {
         healthValue = newHealthValue;
     }
