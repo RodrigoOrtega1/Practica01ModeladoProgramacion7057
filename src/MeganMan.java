@@ -19,7 +19,11 @@ public class MeganMan extends Character {
     public void setSkill(MeganManSkills newSkill){
         actualSkill = newSkill;
     }
-
+    
+    /**
+     * Metodo que genera una numero aleatorio entre 1, 2 y 3, y dependiendo del número
+     * estalece una habilidad para el personaje MeganMan
+     */
     public void selectSkill(){
         Random random = new Random();
         int randomInt = random.nextInt(3);
