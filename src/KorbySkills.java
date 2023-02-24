@@ -9,6 +9,11 @@ class NormalKorbySkill implements KorbySkills{
     public String skill(Character target) {
         return "Korby ha atacado a " + target.getName();
     }
+    
+    /**
+     * Método que devuelve el nombre de la habilidad "Ataque Normal"
+     * @return skillName el nombre de la habilidad
+     */
     public String getName(){
         return skillName;
     }
@@ -22,6 +27,10 @@ class UltraSwordSkill implements KorbySkills{
         return "Korby ha atacado a " + target.getName() + " con su " + skillName;
     }
     
+    /**
+     * Método que devuelve el nombre de la habilidad "Hyper Sword"
+     * @return skillName el nombre de la habilidad
+     */
     public String getName(){
         return skillName;
     }
@@ -36,6 +45,10 @@ class KorbySkill2 implements KorbySkills{
         return "Korby ha atacado a " + target.getName() + " con su " + skillName;
     }
     
+    /**
+     * Método que devuelve el nombre de la habilidad "Mecha"
+     * @return skillName el nombre de la habilidad
+     */
     public String getName(){
         return skillName;
     }
@@ -51,6 +64,10 @@ class KorbySkill3 implements KorbySkills{
         return "Korby ha atacado a " + target.getName() + " con su " + skillName;
     }
     
+    /**
+     * Método que devuelve el nombre de la habilidad "Mazo"
+     * @return skillName el nombre de la habilidad
+     */
     public String getName(){
         return skillName;
     }
