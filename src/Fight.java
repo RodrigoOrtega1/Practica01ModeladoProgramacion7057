@@ -19,6 +19,10 @@ public class Fight implements Subject{
         this.fightEvent = fightEvent;
     }
 
+    public String getFightEvent(){
+        return this.fightEvent;
+    }
+
     public void fight(){
         Random random = new Random();
         while (fighters.size() != 1){
@@ -33,15 +37,18 @@ public class Fight implements Subject{
                     continue;
                 } else {
                     setFightEvent(fighters.get(i).attack(fighters.get(randomTarget)));
+                    notifyObserver();
                 }
 
                 if (fighters.get(randomTarget).getHealthValue() <= 0){
-                    setFightEvent("- " + fighters.get(randomTarget).getName() + " ha sido eliminado :( -");
                     fighters.remove(fighters.get(randomTarget));
+                    setFightEvent("- " + fighters.get(randomTarget).getName() + " ha sido eliminado :( -");
+                    notifyObserver();
                 }
             }
         }
         setFightEvent("--- " + fighters.get(0).getName() + " gana! ---");
+        notifyObserver();
     }
 
     @Override

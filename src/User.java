@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+
 public class User implements Observer{
 
     String id;
     Character betOn;
+    String currentFightEvent;
     Fight currentFight;
+    ArrayList<String> fight = new ArrayList<>();
 
     public User(String id, Character betFor, Fight currentFight){
         this.id = id;
@@ -21,8 +25,13 @@ public class User implements Observer{
 
     @Override
     public void update() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+       currentFightEvent = currentFight.getFightEvent();
+       fight.add(currentFightEvent);
     }
-    
+
+    public void replayFight(){
+        for (String fightEvents : fight){
+            System.out.println(fightEvents + "\n");
+        }
+    }
 }
