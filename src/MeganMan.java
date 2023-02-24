@@ -11,7 +11,11 @@ public class MeganMan extends Character {
         setDefenseValue(0.5);
         setHealthValue(100);
     }
-
+    
+    /**
+     * Metodo setter para establecer las habilidades del personaje MeganMan
+     * @param newSkill la habilidad de un personaje
+     */
     public void setSkill(MeganManSkills newSkill){
         actualSkill = newSkill;
     }
