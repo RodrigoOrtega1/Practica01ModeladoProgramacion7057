@@ -20,8 +20,6 @@ public class Character{
      */
     private double defenseValue;
 
-    public Skill skillType;
-
     /**
      * Metodo setter para establecer el nombre de un personaje
      * @param newName el nombre del personaje
@@ -62,20 +60,14 @@ public class Character{
         return name;
     }
 
-    public void setSkill(Skill newSkill){
-        skillType = newSkill;
-    }
-
     public void attack(Character target){
-        this.setSkill(skillType);
         double characterAttackValue = this.getAttackValue();
         if(Math.random() < 0.25){
             target.setHealthValue(target.healthValue - (characterAttackValue / target.defenseValue));
             System.out.println(target.name + " se ha defendido del ataque de " + this.name + ", toma dano reducido");
         } else {
             target.setHealthValue(target.healthValue - characterAttackValue);
-            System.out.println(skillType.skill(this, target));
         }
     }
-    
+
 }
