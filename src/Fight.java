@@ -20,29 +20,29 @@ public class Fight implements Subject{
     }
 
     public String getFightEvent(){
-        return this.fightEvent;
+        return fightEvent;
     }
 
     public void fight(){
         Random random = new Random();
         while (fighters.size() != 1){
             for(int i = 0; i < fighters.size(); i++){
-                int randomTarget = random.nextInt(fighters.size());
-
+                int randomInt = random.nextInt(fighters.size());
+                Character target = fighters.get(randomInt);
                 if (fighters.size() == 1){
                     break;
                 }
 
-                if (i == randomTarget){
+                if (i == randomInt){
                     continue;
                 } else {
-                    setFightEvent(fighters.get(i).attack(fighters.get(randomTarget)));
+                    setFightEvent(fighters.get(i).attack(target));
                     notifyObserver();
                 }
 
-                if (fighters.get(randomTarget).getHealthValue() <= 0){
-                    fighters.remove(fighters.get(randomTarget));
-                    setFightEvent("- " + fighters.get(randomTarget).getName() + " ha sido eliminado :( -");
+                if (target.getHealthValue() <= 0){
+                    fighters.remove(target);
+                    setFightEvent("- " + target.getName() + " ha sido eliminado :( -");
                     notifyObserver();
                 }
             }
@@ -63,14 +63,10 @@ public class Fight implements Subject{
 
     @Override
     public void notifyObserver() {
-        for (Observer o : observersList){
-            o.update();
-        }   
-    }
-
-    public static void main(String[] args) {
-        Fight fight = new Fight();
-        fight.initialize();
-        fight.fight();
+        if (observersList.size() > 0){
+            for (Observer o : observersList){
+                o.update();
+            }  
+        }
     }
 }

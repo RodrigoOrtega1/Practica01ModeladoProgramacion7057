@@ -16,39 +16,42 @@ class NormalDituuSkill implements DituuSkills{
 }
 
 class DituuSkill1 implements DituuSkills{
-    String skillName = "Habilidad 1";
-
-    public String getName(){
-        return skillName;
-    }
+    String skillName = "poder de Peekachi";
+    
     @Override
     public String skill(Character target) {
-        return "Dituu ha atacado a " + target.getName() + " con su habilidad 1";
+        return "Dituu ha atacado a " + target.getName() + " con su " + skillName;
+    }
+    
+    public String getName(){
+        return skillName;
     }
 }
 
 class DituuSkill2 implements DituuSkills{
-    String skillName = "Habilidad 2";
-
-    public String getName(){
-        return skillName;
-    }
+    String skillName = "poder de Gardevooar";
+    
     @Override
     public String skill(Character target) {
-        return "Dituu ha atacado a " + target.getName() + " con su habilidad 2";
+        return "Dituu ha atacado a " + target.getName() + " con su " + skillName;
+    }
+    
+    public String getName(){
+        return skillName;
     }
 
 }
 
 class DituuSkill3 implements DituuSkills{
-    String skillName = "Habilidad 3";
-
-    public String getName(){
-        return skillName;
-    }
+    String skillName = "poder de Dragoonite";
+    
     @Override
     public String skill(Character target) {
-        return "Dituu ha atacado a " + target.getName() + " con su habilidad 3";
+        return "Dituu ha atacado a " + target.getName() + " con su " + skillName;
+    }
+    
+    public String getName(){
+        return skillName;
     }
 
 }

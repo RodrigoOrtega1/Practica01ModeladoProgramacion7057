@@ -31,7 +31,7 @@ public class User implements Observer{
 
     public void replayFight(){
         for (String fightEvents : fight){
-            System.out.println(fightEvents + "\n");
+            System.out.println(fightEvents);
         }
     }
 }

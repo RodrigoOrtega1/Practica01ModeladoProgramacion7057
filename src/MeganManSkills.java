@@ -18,43 +18,44 @@ class NormalMeganManSkill implements MeganManSkills{
 
 class MeganManSkill1 implements MeganManSkills{
 
-    String skillName = "Habilidad 1";
-
-    public String getName(){
-        return skillName;
-    }
+    String skillName = "Lanza-cohetes";
+    
     @Override
     public String skill(Character target) {
-        return "MeganMan ha atacado a " + target.getName() + " con su habilidad 1";
+        return "MeganMan ha atacado a " + target.getName() + " con su " + skillName;
+    }
+    
+    public String getName(){
+        return skillName;
     }
 }
 
 class MeganManSkill2 implements MeganManSkills{
 
-    String skillName = "Habilidad 2";
-
-    public String getName(){
-        return skillName;
-    }
-
+    String skillName = "Megan Buster";
+    
     @Override
     public String skill(Character target) {
-        return "MeganMan ha atacado a " + target.getName() + " con su habilidad 2";
+        return "MeganMan ha atacado a " + target.getName() + " con su " + skillName;
+    }
+    
+    public String getName(){
+        return skillName;
     }
 
 }
 
 class MeganManSkill3 implements MeganManSkills{
 
-    String skillName = "Habilidad 3";
-
-    public String getName(){
-        return skillName;
-    }
-
+    String skillName = "Megan Arm";
+    
     @Override
     public String skill(Character target) {
-        return "MeganMan ha atacado a " + target.getName() + " con su habilidad 3";
+        return "MeganMan ha atacado a " + target.getName() + " con su " + skillName;
+    }
+    
+    public String getName(){
+        return skillName;
     }
 
 }

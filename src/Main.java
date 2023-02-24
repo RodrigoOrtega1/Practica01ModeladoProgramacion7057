@@ -8,6 +8,5 @@ public class Main{
         // User usuario4 = new User("usuario4", fight.fighters.get(0), fight);
         fight.fight();
         usuario1.replayFight();
-
     }
 }

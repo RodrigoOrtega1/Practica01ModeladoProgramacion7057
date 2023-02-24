@@ -15,11 +15,11 @@ class NormalKorbySkill implements KorbySkills{
 }
 
 class UltraSwordSkill implements KorbySkills{
-    String skillName = "UltraSword";
+    String skillName = "Hyper Sword";
     
     @Override
     public String skill(Character target) {
-        return "Korby ha atacado a " + target.getName() + " con la ultra espada";
+        return "Korby ha atacado a " + target.getName() + " con su " + skillName;
     }
     
     public String getName(){
@@ -29,30 +29,30 @@ class UltraSwordSkill implements KorbySkills{
 
 class KorbySkill2 implements KorbySkills{
     
-    String skillName = "Habilidad 2";
-
-    public String getName(){
-        return skillName;
-    }
+    String skillName = "Mecha";
     
     @Override
     public String skill(Character target) {
-        return "Korby ha atacado a " + target.getName() + " con su habilidad 2";
+        return "Korby ha atacado a " + target.getName() + " con su " + skillName;
+    }
+    
+    public String getName(){
+        return skillName;
     }
 
 }
 
 class KorbySkill3 implements KorbySkills{
 
-    String skillName = "Habilidad 3";
-
-    public String getName(){
-        return skillName;
-    }
-
+    String skillName = "Mazo";
+    
     @Override
     public String skill(Character target) {
-        return "Korby ha atacado a " + target.getName() + " con su habilidad 3";
+        return "Korby ha atacado a " + target.getName() + " con su " + skillName;
+    }
+    
+    public String getName(){
+        return skillName;
     }
 
 }
