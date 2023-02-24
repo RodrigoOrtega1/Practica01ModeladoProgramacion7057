@@ -11,11 +11,19 @@ public class Korby extends Character{
         setDefenseValue(0.75);
         setHealthValue(150);
     }
-
+   
+   /**
+     * Metodo setter para establecer las habilidades del personaje Korby
+     * @param newSkill la habilidad de un personaje
+     */
     public void setSkill(KorbySkills newSkill){
         actualSkill = newSkill;
     }
-
+   
+   /**
+     * Metodo que genera una numero aleatorio entre 1, 2 y 3, y dependiendo del número
+     * estalece una habilidad para el personaje Korby
+     */
     public void selectSkill(){
         Random random = new Random();
         int randomInt = random.nextInt(3);

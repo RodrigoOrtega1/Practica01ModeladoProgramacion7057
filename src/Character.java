@@ -51,23 +51,39 @@ public class Character{
     public void setHealthValue(double newHealthValue) {
         healthValue = newHealthValue;
     }
-
+    
+    /**
+     * Metodo que devuelve la capacidad de ataque de un personaje
+     * @return attackValue la capacidad de ataque de un personaje
+     */
     public double getAttackValue() {
         return attackValue;
     }
-
+    
+    /**
+     * Metodo que devuelve la capacidad de defensa de un personaje
+     * @return defenseValue la capacidad de defensa de un personaje
+     */
     public double getDefenseValue() {
         return defenseValue;
     }
-
+    
+    /**
+     * Metodo que devuelve la cantidad de vida de un personaje
+     * @return healthValue la cantidad de vida de un personaje
+     */
     public double getHealthValue() {
         return healthValue;
     }
-
+    
+    /**
+     * Metodo que devuelve el nombre de un personaje
+     * @return name el nombre de un personaje
+     */
     public String getName() {
         return name;
     }
-
+    
     public String attack(Character target){
         return "";
     }
