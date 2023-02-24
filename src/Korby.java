@@ -11,7 +11,11 @@ public class Korby extends Character{
         setDefenseValue(0.75);
         setHealthValue(150);
     }
-
+   
+   /**
+     * Metodo setter para establecer las habilidades del personaje Korby
+     * @param newSkill la habilidad de un personaje
+     */
     public void setSkill(KorbySkills newSkill){
         actualSkill = newSkill;
     }
