@@ -11,8 +11,8 @@ public class Main{
         fight3.initialize();
         fight4.initialize();
         User usuario1 = new User("usuario1", fight1.getFighterList().get(0), fight1);
-        User usuario2 = new User("usuario2", fight1.getFighterList().get(1), fight2);
-        User usuario3 = new User("usuario3", fight1.getFighterList().get(2), fight3);
+        User usuario2 = new User("usuario2", fight2.getFighterList().get(1), fight2);
+        User usuario3 = new User("usuario3", fight3.getFighterList().get(2), fight3);
         User usuario4 = new User("usuario4", fight4.getFighterList().get(1), fight4);
         fight1.fight();
         fight2.fight();
